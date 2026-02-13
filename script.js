@@ -90,7 +90,7 @@ function populateTemplate(num) {
             `I'll never forget ${memory}. That moment showed me how lucky I am to have you in my life.`;
         
         document.getElementById(`interests${num}`).textContent = 
-            `Your passion for ${interests} inspires me every single day. Watching you pursue what you love reminds me why I fell for you in the first place.`;
+            `Your love for ${interests} make u look more cute and after wearing it u look way cuter and priettier.Watching you pursue what you love reminds me why I fell for you in the first place.`;
         
         document.getElementById(`question${num}`).textContent = 
             `${partnerName}, I want to spend the rest of my life making you smile, supporting your dreams, and building beautiful memories together.`;
