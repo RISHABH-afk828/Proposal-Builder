@@ -7,11 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background Elements -->
+    <div class="bg-element bg-element-1">✨</div>
+    <div class="bg-element bg-element-2">💖</div>
+    <div class="bg-element bg-element-3">🌟</div>
+    <div class="bg-element bg-element-4"></div>
+    <div class="bg-element bg-element-5"></div>
+
     <div class="container">
         <!-- Form Section -->
         <div id="formSection" class="card">
             <h1>💍 Digital Proposal Builder</h1>
-            <p class="subtitle">Create a beautiful proposal in seconds</p>
+            <p class="subtitle">Create a beautiful, personalized proposal</p>
 
             <form id="proposalForm">
                 <div class="form-group">
@@ -34,22 +41,109 @@
                     <textarea id="memory" required placeholder="Describe a special moment you shared..."></textarea>
                 </div>
 
-                <button type="submit">Generate My Proposal ✨</button>
+                <button type="submit">Generate Proposal Templates ✨</button>
             </form>
         </div>
 
-        <!-- Proposal Template Section -->
-        <div id="proposalSection" class="card hidden">
-            <div class="proposal-template">
-                <div class="emoji">💖</div>
-                <h2 id="proposalTitle"></h2>
-                <p id="proposalIntro"></p>
-                <p id="proposalMemory"></p>
-                <p id="proposalInterests"></p>
-                <p id="proposalQuestion"></p>
-                <div class="closing">Will you marry me? 💍</div>
+        <!-- Template Selection Section -->
+        <div id="templateSection" class="hidden">
+            <h2 class="selection-title">Choose Your Perfect Template</h2>
+            <p class="selection-subtitle">Click on any template to see it in full</p>
+            
+            <div class="templates-grid">
+                <!-- Template 1: Romantic -->
+                <div class="template-card romantic" onclick="showProposal(1)">
+                    <div class="template-icon">💖</div>
+                    <h3>Classic Romance</h3>
+                    <p>Elegant and heartfelt</p>
+                    <div class="preview-badge">Click to preview</div>
+                </div>
+
+                <!-- Template 2: Playful -->
+                <div class="template-card playful" onclick="showProposal(2)">
+                    <div class="template-icon">🎉</div>
+                    <h3>Playful & Fun</h3>
+                    <p>Cheerful and lighthearted</p>
+                    <div class="preview-badge">Click to preview</div>
+                </div>
+
+                <!-- Template 3: Adventurous -->
+                <div class="template-card adventurous" onclick="showProposal(3)">
+                    <div class="template-icon">🌟</div>
+                    <h3>Adventure Awaits</h3>
+                    <p>Bold and exciting</p>
+                    <div class="preview-badge">Click to preview</div>
+                </div>
             </div>
-            <button class="back-btn" onclick="goBack()">Create Another Proposal</button>
+        </div>
+
+        <!-- Full Proposal View -->
+        <div id="proposalSection" class="hidden">
+            <!-- Romantic Template -->
+            <div id="template1" class="proposal-view romantic-theme hidden">
+                <div class="floating-hearts">
+                    <span>💕</span>
+                    <span>💖</span>
+                    <span>💗</span>
+                    <span>💝</span>
+                </div>
+                <div class="proposal-content">
+                    <div class="emoji-large">💖</div>
+                    <h2 id="title1"></h2>
+                    <div class="divider"></div>
+                    <p class="intro" id="intro1"></p>
+                    <p id="memory1"></p>
+                    <p id="interests1"></p>
+                    <p id="question1"></p>
+                    <div class="closing">Will you be my Valentine? 💍</div>
+                </div>
+            </div>
+
+            <!-- Playful Template -->
+            <div id="template2" class="proposal-view playful-theme hidden">
+                <div class="confetti">
+                    <span>🎊</span>
+                    <span>🎉</span>
+                    <span>✨</span>
+                    <span>🎈</span>
+                    <span>🌟</span>
+                </div>
+                <div class="proposal-content">
+                    <div class="emoji-large bouncing">🎉</div>
+                    <h2 id="title2"></h2>
+                    <div class="divider"></div>
+                    <p class="intro" id="intro2"></p>
+                    <p id="memory2"></p>
+                    <p id="interests2"></p>
+                    <p id="question2"></p>
+                    <div class="closing">Let's do this forever! 💍</div>
+                </div>
+            </div>
+
+            <!-- Adventurous Template -->
+            <div id="template3" class="proposal-view adventure-theme hidden">
+                <div class="stars">
+                    <span>⭐</span>
+                    <span>✨</span>
+                    <span>🌟</span>
+                    <span>💫</span>
+                </div>
+                <div class="proposal-content">
+                    <div class="emoji-large pulse">🌟</div>
+                    <h2 id="title3"></h2>
+                    <div class="divider"></div>
+                    <p class="intro" id="intro3"></p>
+                    <p id="memory3"></p>
+                    <p id="interests3"></p>
+                    <p id="question3"></p>
+                    <div class="closing">Let's start our greatest adventure! 💍</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="back-btn" onclick="backToTemplates()">← Choose Another Template</button>
+                <button class="download-btn" onclick="downloadProposal()">Download as Image 📥</button>
+            </div>
         </div>
     </div>
 
