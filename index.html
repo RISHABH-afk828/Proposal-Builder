@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Proposal Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <div id="formSection" class="card">
+            <h1>💍 Digital Proposal Builder</h1>
+            <p class="subtitle">Create a beautiful proposal in seconds</p>
+
+            <form id="proposalForm">
+                <div class="form-group">
+                    <label for="yourName">Your Name</label>
+                    <input type="text" id="yourName" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="partnerName">Partner's Name</label>
+                    <input type="text" id="partnerName" required placeholder="Enter your partner's name">
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Partner's Interests</label>
+                    <textarea id="interests" required placeholder="What does your partner love? (e.g., photography, hiking, coffee...)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="memory">A Special Memory Together</label>
+                    <textarea id="memory" required placeholder="Describe a special moment you shared..."></textarea>
+                </div>
+
+                <button type="submit">Generate My Proposal ✨</button>
+            </form>
+        </div>
+
+        <!-- Proposal Template Section -->
+        <div id="proposalSection" class="card hidden">
+            <div class="proposal-template">
+                <div class="emoji">💖</div>
+                <h2 id="proposalTitle"></h2>
+                <p id="proposalIntro"></p>
+                <p id="proposalMemory"></p>
+                <p id="proposalInterests"></p>
+                <p id="proposalQuestion"></p>
+                <div class="closing">Will you marry me? 💍</div>
+            </div>
+            <button class="back-btn" onclick="goBack()">Create Another Proposal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
